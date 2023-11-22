@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="all_analysis.css">
+	<title>Overall Analysis</title>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		
+<a 		href="#" class="brand"><img src="https://w7.pngwing.com/pngs/657/810/png-transparent-social-media-linkedin-business-organization-company-plane-angle-company-logo.png" alt=""></a>
+
+    <!-- side menu elements -->
+		<ul class="side-menu">
+			<li><a href="E:/Projects/Airline Analysis/dashboard.html"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#" class="active"><i class='bx bxs-chart icon' ></i>Analysis <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Overall Analysis</a></li>
+				
+				</ul>
+			</li>
+            <li>
+				<a href="#"><i class='bx bxs-chart icon' ></i> O/D Analysis<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">On Time</a></li>
+					<li><a href="#">Delay Time</a></li>
+				</ul>
+			</li>
+                
+			<li>
+				<a href="#"><i class='bx bx-table icon' ></i>Air Map<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Air Map</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i>Airport Details<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<form action="#">
+						<div class="form-group">
+
+							<input type="text" id="input-Box" placeholder="Search..." autocomplete="off">
+							<button><i class='bx bx-search icon' ></i></button>
+                         <div class="result-Box"> </div>
+
+						</div>
+					</form>
+				</ul>
+			</li>
+		</ul>
+ <!-- side menu elements -->
+
+		<div class="ads">
+			<div class="wrapper">
+				<a href="#" class="btn-upgrade">International@gmail.com</a>
+				<p>Become a <span>PRO</span> member and enjoy <span>All Features</span></p>
+			</div>
+		</div>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+         <nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<div class="h1">
+			<h1>International Airline Analysis</h1>
+		    </div>
+
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://img.freepik.com/premium-vector/man-avatar-profile-round-icon_24640-14044.jpg" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+
+
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+     
+
+
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Overall Analysis</h1>
+			<ul class="breadcrumbs">
+				<li><a href="#">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Overall Analysis</a></li>
+			</ul>
+			
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+                         <h3>Dataset</h3>
+					</div>
+
+					
+						<!-- dataset tabel -->
+						<div class="container">
+							<!-- dataset table -->
+							<form method="POST" name="sample">
+								<br>
+								Airport Name: <input type="text" name="name"> 
+								Month: <input type="month" name="month">
+								No.of.On Time: <input type="number" name="ontime">
+								No.of.Delayed: <input type="number" name="delayed">
+								<br><br>
+								<input type="button" name="add" value="Add Data" style="background-color: rgb(0, 132, 255); border-radius: 6px; color: aliceblue; font-size: 16px;" onclick="addStudent();" class="btn btn-success"><hr>
+					
+								<table id="tbl" class="table" border="1">
+									<thead>
+										<th>Name</th> 
+										<th>Month</th>
+										<th>On Time</th>
+										<th>Delayed</th>
+										<th>Delete</th>
+										<th>Update</th>
+									</thead>
+									<tbody>
+										<!-- Existing table body will be populated from localStorage on page load -->
+									</tbody>
+								</table>
+							</form>
+					
+							<script type="text/javascript">
+								// Load existing data from localStorage on page load
+								window.onload = function () {
+									var savedData = JSON.parse(localStorage.getItem('airportData')) || [];
+									var tbody = document.querySelector("#tbl tbody");
+					
+									savedData.forEach(function (data) {
+										appendRow(data.name, data.month, data.ontime, data.delayed);
+									});
+								}
+					
+								function addStudent() { 
+									var name = document.sample.name.value; 
+									var month = document.sample.month.value;
+									var ontime = document.sample.ontime.value;
+									var delayed = document.sample.delayed.value; 
+					
+									appendRow(name, month, ontime, delayed);
+					
+									// Save data to localStorage
+									saveDataToLocalStorage();
+								}
+					
+								function appendRow(name, month, ontime, delayed) {
+									var tr = document.createElement('tr');
+									var td1 = tr.appendChild(document.createElement('td'));
+									var td2 = tr.appendChild(document.createElement('td'));
+									var td3 = tr.appendChild(document.createElement('td'));
+									var td4 = tr.appendChild(document.createElement('td'));
+									var td5 = tr.appendChild(document.createElement('td'));
+									var td6 = tr.appendChild(document.createElement('td'));
+					
+									td1.innerHTML = name;
+									td2.innerHTML = month;
+									td3.innerHTML = ontime;
+									td4.innerHTML = delayed;
+									td5.innerHTML = '<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger" style="background-color: rgb(0, 132, 255); border-radius: 6px; color: aliceblue; font-size: 16px;">'
+									td6.innerHTML = '<input type="button" name="up" value="Update" onclick="UpStud(this);" class="btn btn-primary" style="background-color: rgb(0, 132, 255); border-radius: 6px; color: aliceblue; font-size: 16px;">'
+					
+									document.getElementById("tbl").getElementsByTagName('tbody')[0].appendChild(tr);
+								}
+					
+								function saveDataToLocalStorage() {
+									var tableRows = document.querySelectorAll("#tbl tbody tr");
+									var data = [];
+					
+									tableRows.forEach(function (row) {
+										var cells = row.getElementsByTagName('td');
+										data.push({
+											name: cells[0].innerText,
+											month: cells[1].innerText,
+											ontime: cells[2].innerText,
+											delayed: cells[3].innerText
+										});
+									});
+					
+									localStorage.setItem('airportData', JSON.stringify(data));
+								}
+					
+								function delStudent(Stud) {
+									var s = Stud.parentNode.parentNode;
+									s.parentNode.removeChild(s);
+					
+									// Save data to localStorage after deletion
+									saveDataToLocalStorage();
+								}
+					
+								// Rest of your functions...
+							</script>
+						</div>
+	
+								<!-- dataset table -->
+                     
+					</div>
+				 </div>
+		           </form>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="all_analysis.js"></script>
+</body>
+</html>

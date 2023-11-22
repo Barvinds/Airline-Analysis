@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="dashboard.css">
+	<title>dashboard</title>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		
+<a 		href="#" class="brand"><img src="https://w7.pngwing.com/pngs/657/810/png-transparent-social-media-linkedin-business-organization-company-plane-angle-company-logo.png" alt=""></a>
+
+    <!-- side menu elements -->
+		<ul class="side-menu">
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#"><i class='bx bxs-chart icon' ></i>Analysis <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="Overall anaysis/all_analysis.html">Overall Analysis</a></li>
+				
+				</ul>
+			</li>
+            <li>
+				<a href="#"><i class='bx bxs-chart icon' ></i> O/D Analysis<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="On and Delay analaysis/ontime.html">On Time</a></li>
+					<li><a href="On and Delay analaysis/delayed.html">Delay Time</a></li>
+				</ul>
+			</li>
+                
+			<li>
+				<a href="#"><i class='bx bx-table icon' ></i>Air Map<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="Air Map/air_map.html">Air Map</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i>Airport Details<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<form action="#">
+						<div class="form-group">
+
+							<input type="text" id="input-Box" placeholder="Search..." autocomplete="off">
+							<button><i class='bx bx-search icon' ></i></button>
+                         <div class="result-Box"> </div>
+
+						</div>
+					</form>
+				</ul>
+			</li>
+		</ul>
+ <!-- side menu elements -->
+
+		<div class="ads">
+			<div class="wrapper">
+				<a href="#" class="btn-upgrade">International@gmail.com</a>
+				<p>Become a <span>PRO</span> member and enjoy <span>All Features</span></p>
+			</div>
+		</div>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+         <nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<div class="h1">
+			<h1>International Airline Analysis</h1>
+		    </div>
+
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://img.freepik.com/premium-vector/man-avatar-profile-round-icon_24640-14044.jpg" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+
+
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+     
+
+
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Dashboard</h1>
+			<ul class="breadcrumbs">
+				<li><a href="#">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Dashboard</a></li>
+			</ul>
+			
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+
+						<h3>Companies of Aircrafts</h3>
+
+					</div>
+                     
+                    <div class="slider">
+						<div class="list">
+							<div class="item">
+								<img src="https://images-platform.99static.com//GiDWKsNwDh0XuxbcpsNy3Ofh8xE=/117x43:890x816/fit-in/500x500/99designs-contests-attachments/79/79323/attachment_79323978" alt="">
+							</div>
+							<div class="item">
+								<img src="https://beebom.com/wp-content/uploads/2015/02/airline-logos-airasia-e1424575285622.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="data:image/png;base64,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 alt="">
+							</div>
+							<div class="item">
+								<img src="data:image/jpeg;base64,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" alt="">
+							</div>
+							<div class="item">
+								<img src="https://beebom.com/wp-content/uploads/2015/02/airline-logos-egyptair.jpg" alt="">
+							</div>
+							<div class="item">
+								<img src="https://beebom.com/wp-content/uploads/2018/12/IranAir.jpg" alt="">
+							</div>
+						</div>
+						<div class="buttons">
+							<button id="prev"><</button>
+							<button id="next">></button>
+						</div>
+						<ul class="dots">
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				 </div>
+		           </form>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="dashboard.js"></script>
+</body>
+</html>

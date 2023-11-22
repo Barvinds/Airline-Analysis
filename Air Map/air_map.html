@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="air_map.css">
+	<title>Air Map</title>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		
+<a 		href="#" class="brand"><img src="https://w7.pngwing.com/pngs/657/810/png-transparent-social-media-linkedin-business-organization-company-plane-angle-company-logo.png" alt=""></a>
+
+    <!-- side menu elements -->
+		<ul class="side-menu">
+			<li><a href="E:/Projects/Airline Analysis/dashboard.html"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#"><i class='bx bxs-chart icon' ></i>Analysis <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Overall Analysis</a></li>
+				
+				</ul>
+			</li>
+            <li>
+				<a href="#"><i class='bx bxs-chart icon' ></i> O/D Analysis<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">On Time</a></li>
+					<li><a href="#">Delay Time</a></li>
+				</ul>
+			</li>
+                
+			<li>
+				<a href="#" class="active"><i class='bx bx-table icon' ></i>Air Map<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Air Map</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i>Airport Details<i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<form action="#">
+						<div class="form-group">
+
+							<input type="text" id="input-Box" placeholder="Search..." autocomplete="off">
+							<button><i class='bx bx-search icon' ></i></button>
+                         <div class="result-Box"> </div>
+
+						</div>
+					</form>
+				</ul>
+			</li>
+		</ul>
+ <!-- side menu elements -->
+
+		<div class="ads">
+			<div class="wrapper">
+				<a href="#" class="btn-upgrade">International@gmail.com</a>
+				<p>Become a <span>PRO</span> member and enjoy <span>All Features</span></p>
+			</div>
+		</div>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+         <nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<div class="h1">
+			<h1>International Airline Analysis</h1>
+		    </div>
+
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://img.freepik.com/premium-vector/man-avatar-profile-round-icon_24640-14044.jpg" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+
+
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+     
+
+
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Air Map</h1>
+			<ul class="breadcrumbs">
+				<li><a href="#">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Air Map</a></li>
+			</ul>
+			
+			<div class="data">
+				<div class="content-data">
+		 
+                    <div id="map"></div>
+
+					</div>
+				 </div>
+		           </form>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+    <script>
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+             center:  { lat: 8.8581839, lng: 75.1488418 },
+             zoom: 8 // Adjust the zoom level as needed
+          });
+        }
+      </script>
+      <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkYYOWlxYCDqllYl4gmrtJBIAI2JrejZs&callback=initMap">
+    </script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="air_map.js"></script>
+</body>
+</html>
